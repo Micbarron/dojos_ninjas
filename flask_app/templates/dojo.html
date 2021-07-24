@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos</title>
+</head>
+<body>
+    <h1>New Dojo</h1>
+    <form action="/dojo/create" method= POST>
+        <label for="dojo_name">Name:</label>
+        <input type="text" name="dojo_name">
+        <input type="submit">
+
+    </form>
+    <h1>All Dojos</h1>
+    <!-- <select name="all_dojos" id="all_dojos">
+        {% for dojo in dojos %}
+        
+        <option value="{{dojos.id}}">{{dojos.name}}</option>
+
+        {% endfor %}
+    </select> -->
+    <ul>
+        {% for dojo in dojos %}
+        <li><a href="/dojos/{{dojo.id}}">{{dojo.name}}</a></li>
+        {% endfor %}
+    </ul>
+<!-- add route for dojo rost -->
+    <a href="/ninjas">Add Ninja</a>
+
+    <!-- add route for ninja page -->
+</body>
+</html>
